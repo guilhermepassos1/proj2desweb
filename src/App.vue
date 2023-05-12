@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 
-const produtos_mari = ref([
+const tabela_camnac = ref([
   {
     id: 1,
     nome: 'GingerGlow - Nude',
@@ -53,21 +53,21 @@ const produtos_fran = ref([
     nome: 'Gloss Labial Pink Chilli',
     preco: 49.9,
     quantidade: 0,
-    imagem: 'pink-chily.jpeg'
+    imagem: 'united.png'
   },
   {
     id: 2,
     nome: 'Stick Balms By Fran',
     preco: 39.9,
     quantidade: 0,
-    imagem: 'balm-fran.jpeg'
+    imagem: 'psg.png'
   },
   {
     id: 3,
     nome: 'Máscara Para Cílios Fran Maravicherry',
     preco: 55.0,
     quantidade: 0,
-    imagem: 'mascara-fran.jpeg'
+    imagem: 'realmadid.png'
   }
 ])
 const produtos_bocaRosa = ref([
@@ -76,14 +76,14 @@ const produtos_bocaRosa = ref([
     nome: 'Pó Boca Rosa Beauty',
     preco: 49.9,
     quantidade: 0,
-    imagem: 'po-bocarosa.jpeg'
+    imagem: 'palmeiras.png'
   },
   {
     id: 2,
     nome: 'Corretivo Líquido - Boca Rosa',
     preco: 40.0,
     quantidade: 0,
-    imagem: 'boca-rosa-tint.jpeg'
+    imagem: 'corinthians.png'
     
   },
   {
@@ -101,22 +101,22 @@ const carrinho = ref({
     
 })
 function incrementar(index) {
-    produtos_mari.value[index].quantidade++
+    tabela_camnac.value[index].quantidade++
   }
   function decrementar(index) {
-    if(produtos_mari.value[index].quantidade > 0){
-      produtos_mari.value[index].quantidade--
+    if(tabela_camnac.value[index].quantidade > 0){
+      tabela_camnac.value[index].quantidade--
     }
   }
   
   function adicionar(index) {
-    if(produtos_mari.value[index].quantidade > 0){
+    if(tabela_camnac.value[index].quantidade > 0){
       
       carrinho.value.itens.push(
-        {...produtos_mari.value[index], preco: produtos_mari.value[index].quantidade * produtos_mari.value[index].preco}
+        {...tabela_camnac.value[index], preco: tabela_camnac.value[index].quantidade * tabela_camnac.value[index].preco}
       );
       
-      carrinho.value.total = carrinho.value.total + produtos_mari.value[index].preco * produtos_mari.value[index].quantidade
+      carrinho.value.total = carrinho.value.total + tabela_camnac.value[index].preco * tabela_camnac.value[index].quantidade
        
     }
     
@@ -133,7 +133,7 @@ function incrementar(index) {
       <div id="produtos-Mari" >
         <h2>Marimaria MakeUp</h2>
         <div class="marcas">
-          <div v-for="(produto, index) in produtos_mari" :key="index">
+          <div v-for="(produto, index) in tabela_camnac" :key="index">
             <h4>{{ produto.nome }}</h4>
           <img :src="produto.imagem" alt="" width="200" />
           <h3>R${{ produto.preco.toFixed(2) }}</h3>
