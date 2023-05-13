@@ -21,10 +21,30 @@ const tabela_camnac = ref([
     preco: 85.0,
     quantidade: 0,
     imagem: 'https://static.netshoes.com.br/produtos/camisa-flamengo-i-2324-sn-torcedor-adidas-masculina/68/FB8-4631-068/FB8-4631-068_zoom1.jpg?ts=1674483941&?ims=544xhttps://static.netshoes.com.br/produtos/camisa-flamengo-i-2324-sn-torcedor-adidas-masculina/68/FB8-4631-068/FB8-4631-068_zoom1.jpg?ts=1674483941&?ims=1088x',
-    nome: 'Camisa Flamengo Home 2023' 
+    nome: 'Camisa Flamengo Home 2023'
   }
 ])
-const produtos_bt = ref([
+function incrementar1(id) {
+  console.log(tabela_camnac.value[id])
+  tabela_camnac.value[id - 1].quantidade++
+}
+function decrementar1(id) {
+  if (tabela_camnac.value[id - 1].quantidade > 0) {
+    tabela_camnac.value[id - 1].quantidade--
+  }
+}
+
+function adicionar1(id) {
+  if (tabela_camnac.value[id - 1].quantidade > 0) {
+    carrinho.value.itens.push({
+      ...tabela_camnac.value[id - 1],
+      preco: tabela_camnac.value[id - 1].quantidade * tabela_camnac.value[id - 1].preco
+    })
+
+    calcularTotal()
+  }
+}
+const tabela_bolas = ref([
   {
     id: 1,
     preco: 70.0,
@@ -41,13 +61,32 @@ const produtos_bt = ref([
   },
   {
     id: 3,
-    
+
     preco: 60.0,
     quantidade: 0,
     imagem: 'https://static.netshoes.com.br/produtos/bola-de-futebol-copa-do-mundo-feminina-adidas-oceaunz-league/86/FB8-5254-086/FB8-5254-086_zoom1.jpg?ts=1674560404&ims=544x',
-    nome: 'Bola FIFA Woman world cup 23'  
+    nome: 'Bola FIFA Woman world cup 23'
   }
 ])
+function incrementar2(id) {
+  console.log(tabela_bolas.value[id])
+  tabela_bolas.value[id - 1].quantidade++
+}
+function decrementar2(id) {
+  if (tabela_bolas.value[id - 1].quantidade > 0) {
+    tabela_bolas.value[id - 1].quantidade--
+  }
+}
+
+function adicionar2(id) {
+  if (tabela_bolas.value[id - 1].quantidade > 0) {
+    carrinho.value.itens.push({
+      ...tabela_bolas.value[id - 1],
+      preco: tabela_bolas.value[id - 1].quantidade * tabela_bolas.value[id - 1].preco
+    })
+
+    calcularTotal()
+  }}
 const tabela_camint = ref([
   {
     id: 1,
@@ -58,7 +97,7 @@ const tabela_camint = ref([
   },
   {
     id: 2,
-  
+
     preco: 39.9,
     quantidade: 0,
     imagem: 'https://static.netshoes.com.br/produtos/camisa-nike-psg-i-20222023-torcedor-pro-masculina/08/2IC-9224-008/2IC-9224-008_zoom1.jpg?ts=1656710994&ims=544x',
@@ -66,143 +105,183 @@ const tabela_camint = ref([
   },
   {
     id: 3,
-   
+
     preco: 55.0,
     quantidade: 0,
     imagem: 'https://static.netshoes.com.br/produtos/camisa-real-madrid-home-2223-sn-torcedor-adidas-masculina/14/3ZP-7305-014/3ZP-7305-014_zoom1.jpg?ts=1653414482&ims=544x',
     nome: 'Camisa Real Madrid Home 23'
   }
 ])
-const produtos_bocaRosa = ref([
+function incrementar3(id) {
+  console.log(tabela_camint.value[id])
+  tabela_camint.value[id - 1].quantidade++
+}
+function decrementar3(id) {
+  if (tabela_camint.value[id - 1].quantidade > 0) {
+    tabela_camint.value[id - 1].quantidade--
+  }
+}
+
+function adicionar3(id) {
+  if (tabela_camint.value[id - 1].quantidade > 0) {
+    carrinho.value.itens.push({
+      ...tabela_camint.value[id - 1],
+      preco: tabela_camint.value[id - 1].quantidade * tabela_camint.value[id - 1].preco
+    })
+
+    calcularTotal()
+  }}
+const tabela_chut = ref([
   {
     id: 1,
     preco: 49.9,
     quantidade: 0,
-    imagem: '',
-    nome: 'Pó Boca Rosa Beauty'
+    imagem: 'https://imgcentauro-a.akamaihd.net/500x500/M0XVW411/chuteira-society-adidas-x-speedportal-3-adulto-img.jpg',
+    nome: 'Chuteira Society Adidas x speedportal 3'
   },
   {
     id: 2,
     preco: 40.0,
     quantidade: 0,
-    imagem: '',
-    nome: 'Corretivo Líquido - Boca Rosa'
+    imagem: 'https://static.netshoes.com.br/produtos/chuteira-society-nike-beco-2-tf/58/HZM-3221-058/HZM-3221-058_zoom1.jpg?ts=1579716100',
+    nome: 'Chuteira Society Nike Beco 2'
   },
   {
     id: 3,
     preco: 39.9,
     quantidade: 0,
-    imagem: 'https://static.netshoes.com.br/produtos/camisa-flamengo-i-2324-sn-torcedor-adidas-masculina/68/FB8-4631-068/FB8-4631-068_zoom1.jpg?ts=1674483941&?ims=544xhttps://static.netshoes.com.br/produtos/camisa-flamengo-i-2324-sn-torcedor-adidas-masculina/68/FB8-4631-068/FB8-4631-068_zoom1.jpg?ts=1674483941&?ims=1088x',
-    nome: 'Boca Rosa by Payot Tint'
+    imagem: 'https://imgcentauro-a.akamaihd.net/500x500/M0QY4204/chuteira-de-campo-puma-future-z-4-4-adulto-img.jpg',
+    nome: 'Chuteira de Campo Puma Future'
   }
-])
-const quantidade = 0
+  ])
+
+  function incrementar4(id) {
+    console.log(tabela_chut.value[id])
+    tabela_chut.value[id - 1].quantidade++
+  }
+function decrementar4(id) {
+    if (tabela_chut.value[id - 1].quantidade > 0) {
+      tabela_chut.value[id - 1].quantidade--
+    }
+  }
+function calcularTotal() {
+    carrinho.value.total = 0.00;
+    for (let item of carrinho.value.itens) {
+      carrinho.value.total += item.quantidade * item.preco;
+    }
+  }
+
+function adicionar4(id) {
+    if (tabela_chut.value[id - 1].quantidade > 0) {
+      carrinho.value.itens.push({
+        ...tabela_chut.value[id - 1],
+        preco: tabela_chut.value[id - 1].quantidade * tabela_chut.value[id - 1].preco
+      })
+
+      calcularTotal()
+    }
+  }
 const carrinho = ref({
-  itens: [],
-  total: 0,
+    itens: [],
+    total: 0
+  })
 
-})
-function incrementar(index) {
-  tabela_camnac.value[index].quantidade++
-}
-function decrementar(index) {
-  if (tabela_camnac.value[index].quantidade > 0) {
-    tabela_camnac.value[index].quantidade--
-  }
-}
+const mostrar = ref(false)
 
-function adicionar(index) {
-  if (tabela_camnac.value[index].quantidade > 0) {
-
-    carrinho.value.itens.push(
-      { ...tabela_camnac.value[index], preco: tabela_camnac.value[index].quantidade * tabela_camnac.value[index].preco }
-    );
-
-    carrinho.value.total = carrinho.value.total + tabela_camnac.value[index].preco * tabela_camnac.value[index].quantidade
-
-  }
-
+function remover(id) {
+  let item = carrinho.value.itens.findIndex(item => item > id);
+  carrinho.value.itens.splice(item, 1);
+  calcularTotal()
 }
 </script>
 
 <template>
   <div id="loja-completa">
     <h1>Passos Sports</h1>
+
     <div>
-      <button>Carrinho</button>
+      <button class="btn-carrinho" @click="mostrar = true"><a href="#carrinho">Carrinho </a>/button>
     </div>
-    <div id="produtos">
-      <div id="produtos-Mari">
-        <h2>Camisas Nacionais</h2>
+    <div id="produto">
+      <div id="tabela-camnac">
+        <h2>Camisas de Clubes Nacionais</h2>
         <div class="marcas">
-          <div v-for="(produto, index) in tabela_camnac" :key="index">
+          <div v-for="(produto, index) in tabela_camnac" :key="index" class="produtos">
             <img :src="produto.imagem" alt="" width="200" />
             <h4>{{ produto.nome }}</h4>
+          <div class="informacoes" div>
             <h3>R${{ produto.preco.toFixed(2) }}</h3>
-            <button class="btn-adicionar" @click="incrementar(index)">+</button>
-            <img src="lixeira.png" alt="" width="25" class="btn-deletar" @click="resetar" />
-            <button class="btn-decrmentar" @click="decrementar(index)">-</button>
-            <p>Quantidade de produto(s): {{ quantidade }}</p>
-            <button class="btn-adicionar" @click="adicionar">Adicionar ao Carrinho</button>
-          </div>
-        </div>
-
-      </div>
-      <hr>
-      <div id="produtos-BT">
-        <h2>Bruna Tavares</h2>
-        <div class="marcas">
-          <div v-for="(produto, index) in produtos_bt" :key="index">
-            <img :src="produto.imagem" alt="" width="200" />
-            <h4>{{ produto.nome }}</h4>
-            <h3>R${{ produto.preco.toFixed(2) }}</h3>
-            <button class="btn-adicionar" @click="incrementar">+</button>
-            <img src="lixeira.png" alt="" width="25" class="btn-deletar" @click="resetar" />
-            <button class="btn-decrmentar" @click="decrementar">-</button>
-            <p>Quantidade de produto(s): {{ contador }}</p>
-            <button class="btn-adicionar" @click="adicionar">Adicionar ao Carrinho</button>
-
-          </div>
-        </div>
-
-      </div>
-      <hr>
-      <div id="produtos-Fran">
-        <h2>Fran</h2>
-        <div class="marcas">
-          <div v-for="(produto, index) in tabela_camint" :key="index">
-            <img :src="produto.imagem" alt="" width="200" />
-            <h4>{{ produto.nome }}</h4>
-            <h3>R${{ produto.preco.toFixed(2) }}</h3>
-            <button class="btn-adicionar" @click="incrementar">+</button>
-            <img src="lixeira.png" alt="" width="25" class="btn-deletar" @click="resetar" />
-            <button class="btn-decrmentar" @click="decrementar">-</button>
-            <p>Quantidade de produto(s): {{ contador }}</p>
-            <button class="btn-adicionar" @click="adicionar">Adicionar ao Carrinho</button>
-
-          </div>
-        </div>
-
-      </div>
-      <hr>
-      <div id="produtos-bocaRosa">
-        <h2>Boca Rosa Beauty</h2>
-        <div class="marcas">
-          <div v-for="(produto, index) in produtos_bocaRosa" :key="index">
-            <img :src="produto.imagem" alt="" width="200" />
-            <h4>{{ produto.nome }}</h4>
-            <h3>R${{ produto.preco.toFixed(2) }}</h3>
-            <button class="btn-adicionar" @click="incrementar">+</button>
-            <img src="lixeira.png" alt="" width="25" class="btn-deletar" @click="resetar" />
-            <button class="btn-decrmentar" @click="decrementar">-</button>
+            <button class="btn-adicionar" @click="incrementar1(produto.id)">+</button>
+            <button class="btn-decrementar" @click="decrementar1(produto.id)">-</button>
             <p>Quantidade de produto(s): {{ produto.quantidade }}</p>
-            <button class="btn-adicionar" @click="adicionar">Adicionar ao Carrinho</button>
+            <button class="btn-adicionar" @click="adicionar1(produto.id)">Adicionar ao Carrinho</button>
           </div>
         </div>
-
       </div>
+      <hr>
+      <div id="tabela-bolas">
+        <h2>Bolas de Futebol</h2>
+        <div class="marcas">
+          <div v-for="(produto, index) in tabela_bolas" :key="index" class="produto">
+            <img :src="produto.imagem" alt="" width="200" />
+            <h4>{{ produto.nome }}</h4>
+            <div class="informacoes" div>
+            <h3>R${{ produto.preco.toFixed(2) }}</h3>
+            <button class="btn-adicionar" @click="incrementar2(produto.id)">+</button>
+            <button class="btn-decrementar" @click="decrementar2(produto.id)">-</button>
+            <p>Quantidade de produto(s): {{ produto.quantidade }}</p>
+            <button class="btn-adicionar" @click="adicionar2(produto.id)">Adicionar ao Carrinho</button>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div id="tabela-camint">
+        <h2>Camisas de Clubes Internacionais</h2>
+        <div class="marcas">
+          <div v-for="(produto, index) in tabela_camint" :key="index" class="produto">
+            <img :src="produto.imagem" alt="" width="200" />
+            <div class="informacoes">
+            <h4>{{ produto.nome }}</h4>
+            <h3>R${{ produto.preco.toFixed(2) }}</h3>
+            <button class="btn-adicionar" @click="incrementar3(produto.id)">+</button>
+            <button class="btn-decrementar" @click="decrementar3(produto.id)">-</button>
+            <p>Quantidade de produto(s): {{ contador }}</p>
+            <button class="btn-adicionar" @click="adicionar3">Adicionar ao Carrinho</button>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div id="tabela-chut">
+        <h2>Chuteiras</h2>
+        <div class="marcas">
+          <div v-for="(produto, index) in tabela_chut" :key="index" class="produto">
+            <img :src="produto.imagem" alt="" width="200" />
+            <div class="informacoes">
+            <h4>{{ produto.nome }}</h4>
+            <h3>R${{ produto.preco.toFixed(2) }}</h3>
+            <button class="btn-adicionar" @click="incrementar4(produto.id)">+</button>
+            <button class="btn-decrementar" @click="decrementar4(produto.id)">-</button>
+            <p>Quantidade de produto(s): {{ produto.quantidade }}</p>
+            <button class="btn-adicionar" @click="adicionar4(produto.id)">Adicionar ao Carrinho</button>
+          </div>
+        </div>
+      </div>
+      <hr>
     </div>
   </div>
+
+  <div id="carrinho" v-if="mostrar">
+     <h2>Carrinho de Compras 🛍️</h2>
+     <button @click="mostrar = false" class="btn-ocultar">Ocultar</button>
+     <div id="item-carrinho" v-for="produto in carrinho.itens" :key="produto.id">
+      <p>Item: {{ produto.nome }}</p>
+      <p>Preco: {{ produto.preco.toFixed(2) }}</p>
+      <p>Quantidade: {{ produto.quantidade }}</p>
+      <div class="botao"><button @click="remover(produto.id)">Remover</button>
+    </div></div>
+    <p class="total">Total: R${{ carrinho.total.toFixed(2) }}</p>
+  </div>
+    </div>
 </template>
 
 <style scoped>
@@ -215,29 +294,29 @@ function adicionar(index) {
 
 h1 {
   text-align: center;
-  font-family: 'URW Chancery L, cursive';
+  font-family: 'calculadora';
   color: rgb(255, 255, 255);
-  text-shadow: 5px 5px 5px rgb(73, 6, 37);
+  text-shadow: 5px 8px 8px rgb(63, 13, 156);
 }
 
 h2 {
   text-align: left;
-  color: rgb(255, 0, 98);
+  color: rgb(63, 13, 156);
   margin: 5px;
 }
 
 p {
   text-align: center;
-  color: rgb(97, 4, 40);
+  color: rgb(255, 255, 255);
 }
 
 img {
-  border-radius: 50%;
+  border-radius: 8%;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.473);
-}
-
-img>.btn-deletar {
-  box-shadow: none;
+  margin-right: 60px;
+  border-color: rgb(216, 16, 16);
+  border-style: double;
+  border-radius: 5px;
 }
 
 h4 {
@@ -247,8 +326,8 @@ h4 {
 }
 
 h3 {
-  text-shadow: 5px 5px 10px rgb(255, 0, 106);
-  color: rgb(255, 0, 98);
+  text-shadow: 5px 7px 18px rgb(63, 13, 156);
+  color: rgb(63, 13, 156);
 }
 
 button {
