@@ -196,17 +196,16 @@ function remover(id) {
 </script>
 
 <template>
-  <div id="loja-completa">
-    <h1>Passos Sports</h1>
-
+  
+  <h1>Passos Sports</h1>
+    
     <div>
-      <button class="btn-carrinho" @click="mostrar = true"><a href="#carrinho">Carrinho </a>/button>
+      <button class="btn-carrinho"  @click="mostrar = true"><a href="#carrinho">Carrinho 🛒</a></button>
     </div>
-    <div id="produto">
-      <div id="tabela-camnac">
-        <h2>Camisas de Clubes Nacionais</h2>
+   
+      <h2>Camisas de Clubes Nacionais</h2>
         <div class="marcas">
-          <div v-for="(produto, index) in tabela_camnac" :key="index" class="produtos">
+          <div v-for="(produto,index) in tabela_camnac" :key="index" class="produto">
             <img :src="produto.imagem" alt="" width="200" />
             <h4>{{ produto.nome }}</h4>
           <div class="informacoes" div>
@@ -218,7 +217,9 @@ function remover(id) {
           </div>
         </div>
       </div>
-      <hr>
+   
+        
+    <div>
       <div id="tabela-bolas">
         <h2>Bolas de Futebol</h2>
         <div class="marcas">
@@ -234,24 +235,28 @@ function remover(id) {
           </div>
         </div>
       </div>
-      <hr>
-      <div id="tabela-camint">
+    </div>
+      
+      <div>
+        <div id="tabela-camint">
         <h2>Camisas de Clubes Internacionais</h2>
         <div class="marcas">
           <div v-for="(produto, index) in tabela_camint" :key="index" class="produto">
             <img :src="produto.imagem" alt="" width="200" />
-            <div class="informacoes">
             <h4>{{ produto.nome }}</h4>
+            <div class="informacoes">
             <h3>R${{ produto.preco.toFixed(2) }}</h3>
             <button class="btn-adicionar" @click="incrementar3(produto.id)">+</button>
             <button class="btn-decrementar" @click="decrementar3(produto.id)">-</button>
-            <p>Quantidade de produto(s): {{ contador }}</p>
+            <p>Quantidade de produto(s): {{ produto.quantidade }}</p>
             <button class="btn-adicionar" @click="adicionar3">Adicionar ao Carrinho</button>
           </div>
         </div>
       </div>
-      <hr>
-      <div id="tabela-chut">
+      </div>
+      
+      <div>
+        <div id="tabela-chut">
         <h2>Chuteiras</h2>
         <div class="marcas">
           <div v-for="(produto, index) in tabela_chut" :key="index" class="produto">
@@ -266,12 +271,12 @@ function remover(id) {
           </div>
         </div>
       </div>
-      <hr>
     </div>
+      </div>
+      
   </div>
-
-  <div id="carrinho" v-if="mostrar">
-     <h2>Carrinho de Compras 🛍️</h2>
+<div><div id="carrinho" v-if="mostrar">
+     <h2>Carrinho de Compras </h2>
      <button @click="mostrar = false" class="btn-ocultar">Ocultar</button>
      <div id="item-carrinho" v-for="produto in carrinho.itens" :key="produto.id">
       <p>Item: {{ produto.nome }}</p>
@@ -281,13 +286,13 @@ function remover(id) {
     </div></div>
     <p class="total">Total: R${{ carrinho.total.toFixed(2) }}</p>
   </div>
-    </div>
+    </div></div>
+  
 </template>
 
 <style scoped>
 .marcas {
   display: flex;
-  justify-content: space-between;
   text-align: center;
   flex-direction: row;
 }
@@ -314,7 +319,7 @@ img {
   border-radius: 8%;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.473);
   margin-right: 60px;
-  border-color: rgb(216, 16, 16);
+  border-color: rgb(53, 16, 216);
   border-style: double;
   border-radius: 5px;
 }
@@ -332,15 +337,15 @@ h3 {
 
 button {
   color: white;
-  background-color: rgb(228, 145, 172);
+  background-color: rgb(145, 151, 228);
   border-color: white;
   border-style: double;
   border-radius: 5px;
 }
 
 button:hover {
-  background-color: rgb(201, 83, 122);
-  box-shadow: 2px 2px 5px rgba(223, 37, 130, 0.473);
+  background-color: rgb(16, 10, 109);
+  box-shadow: 2px 2px 5px rgba(40, 37, 223, 0.473);
 }
 
 hr {
@@ -348,4 +353,13 @@ hr {
   color: white;
   margin: 10px;
 }
+@font-face {
+    font-family: fonte;
+    src: url('fontenumero.ttf');
+}
+
+body {
+    font-family: fonte;
+}
+
 </style>
