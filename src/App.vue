@@ -202,7 +202,7 @@ function remover(id) {
     <div>
       <button class="btn-carrinho"  @click="mostrar = true"><a href="#carrinho">Carrinho 🛒</a></button>
     </div>
-   
+    <div id="tabela-camisetasNascionais">
       <h2>Camisas de Clubes Nacionais</h2>
         <div class="marcas">
           <div v-for="(produto,index) in tabela_camnac" :key="index" class="produto">
@@ -217,9 +217,11 @@ function remover(id) {
           </div>
         </div>
       </div>
-   
+    </div>
         
     <div>
+      
+    </div>
       <div id="tabela-bolas">
         <h2>Bolas de Futebol</h2>
         <div class="marcas">
@@ -235,8 +237,6 @@ function remover(id) {
           </div>
         </div>
       </div>
-    </div>
-      
       <div>
         <div id="tabela-camint">
         <h2>Camisas de Clubes Internacionais</h2>
