@@ -4,24 +4,38 @@ import { ref } from 'vue'
 const tabela_camnac = ref([
   {
     id: 1,
-    preco: 85.0,
+    preco: 298.9,
     quantidade: 0,
     imagem: 'https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/773433/01/fnd/BRA/w/1000/h/1000/fmt/png',
     nome: 'Camisa Palmeiras Home 2023'
   },
   {
     id: 2,
-    preco: 40.0,
+    preco: 294.9,
     quantidade: 0,
     imagem: 'https://static.netshoes.com.br/produtos/camisa-corinthians-ii-2324-sn-torcedor-nike-masculina/26/JD8-2730-026/JD8-2730-026_zoom1.jpg?ts=1681325953&ims=544x',
     nome: 'Camisa Corinthians Home 2023'
   },
   {
     id: 3,
-    preco: 85.0,
+    preco: 349.9,
     quantidade: 0,
     imagem: 'https://static.netshoes.com.br/produtos/camisa-flamengo-i-2324-sn-torcedor-adidas-masculina/68/FB8-4631-068/FB8-4631-068_zoom1.jpg?ts=1674483941&?ims=544xhttps://static.netshoes.com.br/produtos/camisa-flamengo-i-2324-sn-torcedor-adidas-masculina/68/FB8-4631-068/FB8-4631-068_zoom1.jpg?ts=1674483941&?ims=1088x',
     nome: 'Camisa Flamengo Home 2023'
+  },
+  {
+    id: 4,
+    preco: 299.99,
+    quantidade: 0,
+    imagem: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/32dc9c941a7c479e89f2ae1d0116e640_9366/Camisa_1_Sao_Paulo_FC_22_Branco_HA8417_01_laydown.jpg',
+    nome: 'Camisa São Paulo Home 2023'
+  },
+  {
+    id: 5,
+    preco: 219.90,
+    quantidade: 0,
+    imagem: 'https://umbro.vtexassets.com/arquivos/ids/446452-1200-auto?v=637853658635530000&width=1200&height=auto&aspect=true',
+    nome: 'Camisa Grêmio Home 2023'
   }
 ])
 function incrementar1(id) {
@@ -47,25 +61,39 @@ function adicionar1(id) {
 const tabela_bolas = ref([
   {
     id: 1,
-    preco: 70.0,
+    preco: 99.9,
     quantidade: 0,
     imagem: 'https://m.media-amazon.com/images/I/61nmNfIKjeL._AC_SX679_.jpg',
     nome: 'Bola FIFA world cup 22'
   },
   {
     id: 2,
-    preco: 65.0,
+    preco: 170.0,
     quantidade: 0,
     imagem: 'https://images.tcdn.com.br/img/img_prod/1127564/bola_nike_academy_conmebol_libertadores_2023_1347_1_9c7f2370a2584b8d4b0675dc639e1e22.jpg',
-    nome: 'Bola CONMEBOL Libertadores 23'
+    nome: 'Bola Libertadores 23'
   },
   {
     id: 3,
 
-    preco: 60.0,
+    preco: 237.0,
     quantidade: 0,
     imagem: 'https://static.netshoes.com.br/produtos/bola-de-futebol-copa-do-mundo-feminina-adidas-oceaunz-league/86/FB8-5254-086/FB8-5254-086_zoom1.jpg?ts=1674560404&ims=544x',
-    nome: 'Bola FIFA Woman world cup 23'
+    nome: 'Bola FIFA W  World cup 23'
+  },
+  {
+    id: 4,
+    preco: 159,
+    quantidade: 0,
+    imagem: 'https://umbro.vtexassets.com/arquivos/ids/454666-1200-auto?v=638140694503270000&width=1200&height=auto&aspect=true',
+    nome: 'Bola Umbro Neo'
+  },
+  {
+    id: 5,
+    preco: 109,
+    quantidade: 0,
+    imagem: 'https://imgnike-a.akamaihd.net/768x768/0243930L.jpg',
+    nome: 'Bola Nike Premier League Academy'
   }
 ])
 function incrementar2(id) {
@@ -90,7 +118,7 @@ function adicionar2(id) {
 const tabela_camint = ref([
   {
     id: 1,
-    preco: 49.9,
+    preco: 237.9,
     quantidade: 0,
     imagem: 'https://static.netshoes.com.br/produtos/camisa-manchester-united-home-2223-sn-torcedor-adidas-masculina/16/3ZP-8883-016/3ZP-8883-016_zoom1.jpg?ts=1657716161',
     nome: 'Camisa Manchester United Home 2023'
@@ -98,7 +126,7 @@ const tabela_camint = ref([
   {
     id: 2,
 
-    preco: 39.9,
+    preco: 279.9,
     quantidade: 0,
     imagem: 'https://static.netshoes.com.br/produtos/camisa-nike-psg-i-20222023-torcedor-pro-masculina/08/2IC-9224-008/2IC-9224-008_zoom1.jpg?ts=1656710994&ims=544x',
     nome: 'Camisa PSG Home 23'
@@ -106,10 +134,24 @@ const tabela_camint = ref([
   {
     id: 3,
 
-    preco: 55.0,
+    preco: 249.0,
     quantidade: 0,
     imagem: 'https://static.netshoes.com.br/produtos/camisa-real-madrid-home-2223-sn-torcedor-adidas-masculina/14/3ZP-7305-014/3ZP-7305-014_zoom1.jpg?ts=1653414482&ims=544x',
     nome: 'Camisa Real Madrid Home 23'
+  },
+  {
+    id: 4,
+    preco: 303.99,
+    quantidade: 0,
+    imagem: 'https://static.netshoes.com.br/produtos/camisa-milan-home-2223-sn-torcedor-masculina/02/2I3-5430-002/2I3-5430-002_zoom1.jpg?ts=1660669230',
+    nome: 'Camisa Milan Home 23'
+  },
+  {
+    id: 5,
+    preco: 246.9,
+    quantidade: 0,
+    imagem: 'https://static.netshoes.com.br/produtos/camisa-bayern-de-munique-home-2223-sn-torcedor-adidas-masculina/16/3ZP-7348-016/3ZP-7348-016_zoom1.jpg?ts=1652800508',
+    nome: 'Camisa Bayern de Munique Home 22'
   }
 ])
 function incrementar3(id) {
@@ -134,24 +176,38 @@ function adicionar3(id) {
 const tabela_chut = ref([
   {
     id: 1,
-    preco: 49.9,
+    preco: 499,
     quantidade: 0,
     imagem: 'https://imgcentauro-a.akamaihd.net/500x500/M0XVW411/chuteira-society-adidas-x-speedportal-3-adulto-img.jpg',
     nome: 'Chuteira Society Adidas x speedportal 3'
   },
   {
     id: 2,
-    preco: 40.0,
+    preco: 250,
     quantidade: 0,
     imagem: 'https://static.netshoes.com.br/produtos/chuteira-society-nike-beco-2-tf/58/HZM-3221-058/HZM-3221-058_zoom1.jpg?ts=1579716100',
     nome: 'Chuteira Society Nike Beco 2'
   },
   {
     id: 3,
-    preco: 39.9,
+    preco: 284.9,
     quantidade: 0,
     imagem: 'https://imgcentauro-a.akamaihd.net/500x500/M0QY4204/chuteira-de-campo-puma-future-z-4-4-adulto-img.jpg',
     nome: 'Chuteira de Campo Puma Future'
+  },
+  {
+    id: 4,
+    preco: 344.9,
+    quantidade: 0,
+    imagem: 'https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b6dba83ca5054286b297af3f01466b17_9366/Chuteira_Deportivo_II_Futsal_Branco_HP2513_01_standard_hover.jpg',
+    nome: 'Chuteira Deportivo II Futsal'
+  },
+  {
+    id: 5,
+    preco: 329.9,
+    quantidade: 0,
+    imagem: 'https://imgnike-a.akamaihd.net/768x768/0120775A.jpg',
+    nome: 'Chuteira Nike Tiempo Legend 9'
   }
   ])
 
@@ -299,7 +355,7 @@ function remover(id) {
 
 h1 {
   text-align: center;
-  font-family: 'calculadora';
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   color: rgb(255, 255, 255);
   text-shadow: 5px 8px 8px rgb(63, 13, 156);
 }
@@ -331,7 +387,6 @@ h4 {
 }
 
 h3 {
-  text-shadow: 5px 7px 18px rgb(63, 13, 156);
   color: rgb(63, 13, 156);
 }
 
